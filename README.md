@@ -1,19 +1,19 @@
 # WCPFI
 ## WooCommerce Products From Images
 
-This is a simply python script to convert a list of images into products in WooCommerce. 
+This is a simple python script to convert a list of images into products in WooCommerce. 
 
 ### The Flow
-1. Get the image from a directory `IMAGES_INPUT` 
+1. Get images from a directory `IMAGES_INPUT` 
 2. Resize images with `python-resize-image` and place them in the temporary folder `IMAGES_OUTPUT`
 3. Upload the images to S3
 4. Group images by name (more on that in the description below)
-5. Create product name and slug from the image name
+5. Create products with name and slug from the image name
 6. Create new products in WooCommerce
 
 ### Image naming
-The `wcpfi` script is using image names to generate the product name, slug and group multiple images for a single product
-together.
+The `wcpfi` script is using image names to generate the product name, slug and also uses the image name to group
+ multiple images for a single product together.
 
 Eg. if you have a list of images:
 
@@ -39,3 +39,4 @@ export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_DEFAULT_REGION=
 ```
+4. Run `python run.py`
