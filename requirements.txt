@@ -1,0 +1,5 @@
+woocommerce
+python-resize-image
+Pillow
+boto3
+python-decouple
