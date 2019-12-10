@@ -25,7 +25,8 @@ wcapi = API(
     url=config('WC_URL'),
     consumer_key=config('WC_CONSUMER_KEY'),
     consumer_secret=config('WC_CONSUMER_SECRET'),
-    version="wc/v3"
+    version="wc/v3",
+    query_string_auth=True #Force Basic Authentication as query string true and using under HTTPS
 )
 
 BUCKET_NAME = config('S3_BUCKET')
@@ -199,4 +200,3 @@ for grp in groups:
     logging.info('WC Data: ' + str(dat))
     r = wcapi.post('products', data=dat)
     logging.info('Processed ' + str(grp) + ', status: ' + str(r.json()))
-    # break
